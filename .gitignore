@@ -1,0 +1,91 @@
+####################################
+# File di configurazione sensibili
+####################################
+
+# Parametri di connessione al database
+config/db.php
+config/database.php
+config/config.php
+.env
+
+# Eventuali backup di config
+*.env
+*.env.local
+*.env.example.bak
+
+####################################
+# Cache, sessioni, log
+####################################
+
+# Log PHP
+logs/
+*.log
+
+# File di sessione (se salvate su file)
+sessions/
+tmp/
+
+####################################
+# Dipendenze
+####################################
+
+# Composer (se usato)
+vendor/
+
+# Node / frontend tooling (se usato)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+####################################
+# File generati automaticamente
+####################################
+
+# Cache varie
+.cache/
+.cache/*
+*.cache
+
+####################################
+# IDE ed editor
+####################################
+
+# VS Code
+.vscode/
+
+# PhpStorm / IntelliJ
+.idea/
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+####################################
+# Sistema operativo
+####################################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+####################################
+# Database
+####################################
+
+# Dump locali del database
+*.sql
+*.sqlite
+*.db
+
+####################################
+# File temporanei / backup
+####################################
+
+*.bak
+*.tmp
+*.swp
+*~
