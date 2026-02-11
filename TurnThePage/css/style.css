@@ -1,0 +1,254 @@
+
+* {
+    /* Selettore universale: applica a TUTTI gli elementi */
+    margin: 0;
+    /* Rimuove margini predefiniti del browser */
+    padding: 0;
+    /* Rimuove padding predefiniti del browser */
+    box-sizing: border-box;
+    /* Include padding e border nella larghezza/altezza totale */
+    /* Esempio: width: 100px con padding: 10px rimane 100px totali */
+}
+
+/* ============================================ */
+/* STILI BODY (corpo della pagina) */
+/* ============================================ */
+
+body {
+    /* Applica stili al tag <body> */
+    font-family: Arial, sans-serif;
+    /* Font principale: Arial, se non disponibile usa un sans-serif generico */
+    background: #f5f5f5;
+    /* Colore di sfondo grigio chiaro (#f5f5f5 = RGB grigio) */
+    padding: 20px;
+    /* Spazio interno di 20px su tutti i lati */
+}
+
+/* ============================================ */
+/* CONTAINER PRINCIPALE */
+/* ============================================ */
+
+.container {
+    /* Classe per il contenitore principale */
+    /* Si applica a: <div class="container"> */
+    max-width: 1400px;
+    /* Larghezza massima: 1400 pixel */
+    /* La pagina non si allargherà oltre questo valore su schermi grandi */
+    margin: 0 auto;
+    /* margin: 0 auto centra orizzontalmente il contenitore */
+    /* 0 = margine verticale (top/bottom) */
+    /* auto = margine orizzontale automatico (left/right) che centra */
+}
+
+/* ============================================ */
+/* TITOLO PRINCIPALE */
+/* ============================================ */
+
+h1 {
+    /* Applica stili a tutti i tag <h1> */
+    text-align: center;
+    /* Allinea il testo al centro */
+    color: #333;
+    /* Colore del testo: grigio scuro (#333 = RGB 51,51,51) */
+    margin-bottom: 40px;
+    /* Spazio sotto il titolo: 40 pixel */
+    font-size: 2.5em;
+    /* Dimensione font: 2.5 volte la dimensione base */
+    /* em = unità relativa alla dimensione del font del genitore */
+    /* Se il font base è 16px, 2.5em = 40px */
+}
+
+/* ============================================ */
+/* GRIGLIA DEI LIBRI */
+/* ============================================ */
+
+.books-grid {
+    /* Classe per il contenitore della griglia */
+    display: grid;
+    /* Usa CSS Grid Layout (sistema di layout bidimensionale) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Definisce le colonne della griglia */
+    /* repeat() = ripeti la configurazione */
+    /* auto-fill = crea quante più colonne possibili nello spazio disponibile */
+    /* minmax(250px, 1fr) = ogni colonna è minimo 250px, massimo 1 frazione dello spazio */
+    /* 1fr = 1 frazione flessibile dello spazio disponibile */
+    /* Risultato: griglia responsiva che si adatta alla larghezza dello schermo */
+    gap: 30px;
+    /* Spazio tra le celle della griglia: 30 pixel */
+    /* gap = distanza sia orizzontale che verticale tra gli elementi */
+    padding: 20px;
+    /* Spazio interno del contenitore griglia */
+}
+
+/* ============================================ */
+/* CARD SINGOLO LIBRO */
+/* ============================================ */
+
+.book-card {
+    /* Classe per ogni card di libro */
+    background: white;
+    /* Sfondo bianco */
+    border-radius: 10px;
+    /* Angoli arrotondati con raggio di 10 pixel */
+    padding: 20px;
+    /* Spazio interno: 20 pixel su tutti i lati */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* Ombra della card */
+    /* 0 = offset orizzontale (nessuno spostamento a sx/dx) */
+    /* 4px = offset verticale (spostamento verso il basso) */
+    /* 6px = blur (sfocatura dell'ombra) */
+    /* rgba(0,0,0,0.1) = colore nero con opacità 10% */
+    text-align: center;
+    /* Allinea tutto il testo al centro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animazione fluida quando cambiano transform e box-shadow */
+    /* 0.3s = durata 0.3 secondi */
+    /* ease = curva di animazione (parte lenta, accelera, finisce lenta) */
+}
+
+/* ============================================ */
+/* EFFETTO HOVER SULLA CARD */
+/* ============================================ */
+
+.book-card:hover {
+    /* :hover = pseudo-classe che si attiva quando il mouse passa sopra */
+    /* Si applica quando l'utente passa il mouse sulla card */
+    transform: translateY(-10px);
+    /* Trasforma l'elemento spostandolo */
+    /* translateY(-10px) = sposta verso l'alto di 10 pixel */
+    /* Valore negativo = verso l'alto, positivo = verso il basso */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    /* Ombra più pronunciata durante hover */
+    /* Offset verticale maggiore (8px) e blur maggiore (12px) */
+    /* Opacità maggiore (0.2 = 20%) per ombra più scura */
+}
+
+/* ============================================ */
+/* IMMAGINE DI COPERTINA */
+/* ============================================ */
+
+.book-cover {
+    /* Classe per l'immagine di copertina */
+    width: 100%;
+    /* Larghezza: 100% del contenitore genitore */
+    max-width: 200px;
+    /* Larghezza massima: 200 pixel */
+    /* L'immagine non supererà mai 200px anche su schermi grandi */
+    height: 300px;
+    /* Altezza fissa: 300 pixel */
+    object-fit: cover;
+    /* Definisce come l'immagine si adatta al contenitore */
+    /* cover = riempie tutto lo spazio mantenendo proporzioni */
+    /* Potrebbe tagliare parti dell'immagine ma non distorce */
+    border-radius: 8px;
+    /* Angoli arrotondati di 8 pixel */
+    margin-bottom: 15px;
+    /* Spazio sotto l'immagine: 15 pixel */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    /* Ombra dell'immagine */
+    /* Offset verticale 2px, blur 8px, opacità 30% */
+}
+
+/* ============================================ */
+/* TITOLO DEL LIBRO */
+/* ============================================ */
+
+.book-title {
+    /* Classe per il titolo del libro */
+    font-size: 1.2em;
+    /* Dimensione: 1.2 volte la dimensione base */
+    font-weight: bold;
+    /* Grassetto */
+    /* bold = peso 700 (normale è 400) */
+    color: #333;
+    /* Colore grigio scuro */
+    margin-bottom: 8px;
+    /* Spazio sotto il titolo: 8 pixel */
+    min-height: 50px;
+    /* Altezza minima: 50 pixel */
+    /* Garantisce spazio uniforme anche per titoli corti */
+    /* Evita che le card abbiano altezze diverse */
+}
+
+/* ============================================ */
+/* AUTORE DEL LIBRO */
+/* ============================================ */
+
+.book-author {
+    /* Classe per il nome dell'autore */
+    color: #666;
+    /* Colore grigio medio (#666 = RGB 102,102,102) */
+    font-size: 1em;
+    /* Dimensione normale (1em = dimensione base) */
+    margin-bottom: 10px;
+    /* Spazio sotto: 10 pixel */
+}
+
+/* ============================================ */
+/* INFORMAZIONI AGGIUNTIVE */
+/* ============================================ */
+
+.book-info {
+    /* Classe per editore, anno, ISBN */
+    font-size: 0.9em;
+    /* Dimensione leggermente più piccola (90% della base) */
+    color: #999;
+    /* Grigio chiaro (#999 = RGB 153,153,153) */
+    margin-top: 10px;
+    /* Spazio sopra: 10 pixel */
+    padding-top: 10px;
+    /* Padding interno superiore: 10 pixel */
+    border-top: 1px solid #eee;
+    /* Bordo superiore */
+    /* 1px = spessore 1 pixel */
+    /* solid = linea continua (non tratteggiata) */
+    /* #eee = grigio chiarissimo */
+}
+
+/* ============================================ */
+/* BADGE DISPONIBILITÀ */
+/* ============================================ */
+
+.copies {
+    /* Classe base per il badge di disponibilità */
+    display: inline-block;
+    /* inline-block = si comporta come inline ma accetta width/height */
+    /* Permette di avere padding/margin come un blocco */
+    padding: 5px 10px;
+    /* padding: verticale orizzontale */
+    /* 5px sopra/sotto, 10px sinistra/destra */
+    border-radius: 15px;
+    /* Angoli molto arrotondati (effetto pillola) */
+    font-size: 0.85em;
+    /* Dimensione 85% della base */
+    font-weight: bold;
+    /* Grassetto */
+    margin-top: 10px;
+    /* Spazio sopra: 10 pixel */
+}
+
+/* ============================================ */
+/* BADGE DISPONIBILE (verde) */
+/* ============================================ */
+
+.available {
+    /* Classe quando il libro è disponibile */
+    background: #d4edda;
+    /* Sfondo verde chiaro */
+    color: #155724;
+    /* Testo verde scuro */
+    /* Combinazione di colori per buon contrasto e leggibilità */
+}
+
+/* ============================================ */
+/* BADGE NON DISPONIBILE (rosso) */
+/* ============================================ */
+
+.unavailable {
+    /* Classe quando il libro NON è disponibile */
+    background: #f8d7da;
+    /* Sfondo rosso chiaro */
+    color: #721c24;
+    /* Testo rosso scuro */
+    /* Combinazione di colori che indica "attenzione/problema" */
+}
