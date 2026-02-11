@@ -1,0 +1,2 @@
+Considerando che le Classi devono contenere le funzioni che fanno riferimento a una determinata tabella (e queste funzioni contengono le query CRUD), dobbiamo sistemare le classi (Database, User, Book, Loan) e adattare il contenuto di index.php all'organizzazione in classi.
+Controllare che il caricamento della lista dei libri funzioni ugualmente.
