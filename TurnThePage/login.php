@@ -43,19 +43,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Turn The Page</title>
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 </head>
 <body>
-    <h1>Login</h1>
+    <main class="auth-page">
+        <section class="auth-card">
+            <div class="auth-header">
+                <span class="eyebrow">Accesso</span>
+                <h1 class="auth-title">Bentornato</h1>
+            </div>
     <?php if ($error): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
+                <div class="form-error"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
-    <form method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit">Login</button>
-    </form>
+
+            <form class="auth-form" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                <div class="auth-actions">
+                    <button type="submit" class="button">Accedi</button>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
